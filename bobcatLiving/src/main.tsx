@@ -8,12 +8,16 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./index.css";
-import Home from "./Pages/home.tsx";
+import Login from "./Pages/login.tsx";
+import ApartmentCard from "./components/apartmentCard.tsx";
+import Home from "./Pages/home.tsx"
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Login />} />
+      <Route path="/home" element={<Home />}/>
       <Route path="*" element={<Navigate to="/" />} />
     </>
   )

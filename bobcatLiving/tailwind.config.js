@@ -2,7 +2,11 @@
 export default {
   content: ["./src/**/*.{html,js,jsx,tsx}", "./index.html"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'texas-state': "url('./images/background.jpg')"
+      }
+    },
   },
   plugins: [],
 };
