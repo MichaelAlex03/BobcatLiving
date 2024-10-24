@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@base{
+  input::-webkit-input-placeholder { 
+    text-align:left; 
+  }
+
+  input {
+    text-align: left; /* Add this line */
+  }
+}
+
 @layer utilities{
   .nav{
     @apply relative tracking-[1px]

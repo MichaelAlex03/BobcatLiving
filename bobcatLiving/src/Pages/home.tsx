@@ -3,16 +3,15 @@ import React from 'react'
 
 export const Home = () => {
   return (
-    <>
-    <Navbar />
     <div>
-        <div className=" flex rounded-md justify-center">
-            <input className=""
-            type="text"
-            placeholder="search"/>
-        </div>
+      <Navbar />
+      <div className="flex flex-col rounded-md justify-center items-center h-[80vh]">
+        <h1>Search for your apartment at Texas State</h1>
+        <input className="border-2 pl-2 pr-20 py-3 rounded-lg"
+          type="text"
+          placeholder="search"/>
+      </div>
     </div>
-    </>
   )
 }
 
