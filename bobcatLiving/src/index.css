@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@base{
+@layer base{
   input::-webkit-input-placeholder { 
     text-align:left; 
   }
@@ -10,6 +10,16 @@
   input {
     text-align: left; /* Add this line */
   }
+}
+
+@layer components{
+  .form{
+    @apply bg-white p-6 border-black border-2 rounded-md shadow-2xl justify-center items-center flex flex-col sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/4 2xl:w-1/4;
+  }
+
+  .submit{
+    @apply bg-bar hover:bg-blue-600 text-white font-medium py-2 px-4 rounded mt-2 ;
+  } 
 }
 
 @layer utilities{

@@ -11,13 +11,15 @@ import "./index.css";
 import Login from "./Pages/login.tsx";
 import ApartmentCard from "./components/apartmentCard.tsx";
 import Home from "./Pages/home.tsx"
+import SignUp from "./Pages/signUp.tsx"
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/login" element={<Login />} />
       <Route path="/" element={<Home />}/>
+      <Route path="/login" element={<Login />} />
+      <Route path="/signUp" element={<SignUp />} />
       <Route path="*" element={<Navigate to="/" />} />
     </>
   )

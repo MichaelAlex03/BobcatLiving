@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 
 const Navbar = () => {
 
+
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -17,8 +19,14 @@ const Navbar = () => {
 
 
         <div className='hidden xl:flex lg:flex ml-auto gap-8 font-semibold' > 
-          <button className='py-2 px-8 hover:bg-background hover:text-white hover:border-bg-background border-2 bg-bar text-white rounded-md transition-all cursor-pointer hover:bg-blue-70'>Log In</button>
-          <button className='py-2 px-8 text-white hover:bg-bar hover:text-white border-bg-bar border-2 rounded-md transition-all cursor-pointer'>Sign Up</button>
+          <button className='py-2 px-8 hover:bg-background hover:text-white hover:border-bg-background border-2 bg-bar text-white rounded-md 
+            transition-all cursor-pointer hover:bg-blue-70'>
+              <a href='/login'>Login</a>
+          </button>
+          <button className='py-2 px-8 text-white hover:bg-bar hover:text-white border-bg-bar 
+          border-2 rounded-md transition-all cursor-pointer'>
+            <a href='/signUp'>Sign Up</a>
+          </button>
         </div>
 
         <div className='lg:hidden flex items-center w-full'>
@@ -28,11 +36,23 @@ const Navbar = () => {
        
       </header>
 
-      <div className={`absolute xl:hidden lg:hidden m:hidden top-24 left-0 w-full bg-white flex flex-col items-center gap-6 font-semibold transform transition-transform' 
+      <div className={`absolute xl:hidden lg:hidden m:hidden top-24 left-0 w-full h-screen bg-white flex flex-col items-center gap-6 font-semibold transform transition-transform' 
       ${isMenuOpen ? 'opacity-100' : 'opacity-0'}`} style={{transition: 'transform 0.3s ease, opacity 0.3s ease'}}>
-        <li className='list-none w-full text-center p-4 hover:bg-sky-400 hover:text-white transition-all curse-pointer'>Home</li>
-        <li className='list-none w-full text-center p-4 hover:bg-sky-400 hover:text-white transition-all curse-pointer'>View Apartments</li>
-        <li className='list-none w-full text-center p-4 hover:bg-sky-400 hover:text-white transition-all curse-pointer'>Contact</li>
+        <li className='list-none w-full text-center p-4 hover:bg-bar hover:text-white transition-all curse-pointer'>
+          <a href='/'>Home</a>
+        </li>
+        <li className='list-none w-full text-center p-4 hover:bg-bar hover:text-white transition-all curse-pointer'>
+          <a href='/'>View Apartments</a>
+        </li>
+        <li className='list-none w-full text-center p-4 hover:bg-bar hover:text-white transition-all curse-pointer'>
+          <a href='/'>Contact</a>
+        </li>
+        <li className='list-none w-full text-center p-4 hover:bg-bar hover:text-white transition-all curse-pointer'>
+          <a href='/login'>Login</a>
+        </li>
+        <li className='list-none w-full text-center p-4 hover:bg-bar hover:text-white transition-all curse-pointer'>
+          <a href='/signUp'>Sign Up</a>
+        </li>
 
       </div>
     </div>

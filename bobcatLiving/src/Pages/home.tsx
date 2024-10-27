@@ -1,10 +1,12 @@
 import Navbar from "../components/Navbar"
 import React from 'react'
 import {useState} from 'react'
+import { useNavigate } from 'react-router-dom';
+
 
 
 export const Home = () => {
-
+  
   const [searchData, setSearchData] = useState<{ data: string }>({ data: "" })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
