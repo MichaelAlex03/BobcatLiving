@@ -26,9 +26,11 @@ const Navbar = () => {
         </ul>
 
         <div className="hidden xl:flex lg:flex ml-auto gap-8 font-semibold">
-          <button className="py-2 px-8 hover:bg-background hover:text-white hover:border-bg-background border-2 bg-bar text-white rounded-md transition-all cursor-pointer hover:bg-blue-70">
-            Log In
-          </button>
+          <Link to={"/login"}>
+            <button className="py-2 px-8 hover:bg-background hover:text-white hover:border-bg-background border-2 bg-bar text-white rounded-md transition-all cursor-pointer hover:bg-blue-70">
+              Log In
+            </button>
+          </Link>
           <button className="py-2 px-8 text-white hover:bg-bar hover:text-white border-bg-bar border-2 rounded-md transition-all cursor-pointer">
             Sign Up
           </button>
