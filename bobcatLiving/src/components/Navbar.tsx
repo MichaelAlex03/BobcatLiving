@@ -31,9 +31,11 @@ const Navbar = () => {
               Log In
             </button>
           </Link>
-          <button className="py-2 px-8 text-white hover:bg-bar hover:text-white border-bg-bar border-2 rounded-md transition-all cursor-pointer">
-            Sign Up
-          </button>
+          <Link to={"/signUp"}>
+            <button className="py-2 px-8 text-white hover:bg-bar hover:text-white border-bg-bar border-2 rounded-md transition-all cursor-pointer">
+              Sign Up
+            </button>
+          </Link>
         </div>
 
         <div className="lg:hidden flex items-center w-full">
