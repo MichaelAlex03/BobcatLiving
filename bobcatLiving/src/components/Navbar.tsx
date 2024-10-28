@@ -48,18 +48,24 @@ const Navbar = () => {
       </header>
 
       <div
-        className={`absolute xl:hidden lg:hidden m:hidden top-24 left-0 w-full bg-white flex flex-col items-center gap-6 font-semibold transform transition-transform' 
+        className={`absolute xl:hidden lg:hidden m:hidden top-24 left-0 w-full h-[80vh] bg-white flex flex-col items-center gap-6 font-semibold transform transition-transform' 
       ${isMenuOpen ? "opacity-100" : "opacity-0"}`}
         style={{ transition: "transform 0.3s ease, opacity 0.3s ease" }}
       >
-        <li className="list-none w-full text-center p-4 hover:bg-sky-400 hover:text-white transition-all curse-pointer">
+        <li className="list-none w-full text-center p-4 hover:bg-bar hover:text-white transition-all curse-pointer">
           Home
         </li>
-        <li className="list-none w-full text-center p-4 hover:bg-sky-400 hover:text-white transition-all curse-pointer">
+        <li className="list-none w-full text-center p-4 hover:bg-bar hover:text-white transition-all curse-pointer">
           View Apartments
         </li>
-        <li className="list-none w-full text-center p-4 hover:bg-sky-400 hover:text-white transition-all curse-pointer">
+        <li className="list-none w-full text-center p-4 hover:bg-bar hover:text-white transition-all curse-pointer">
           Contact
+        </li>
+        <li className="list-none w-full text-center p-4 hover:bg-bar hover:text-white transition-all curse-pointer">
+          Log In
+        </li>
+        <li className="list-none w-full text-center p-4 hover:bg-bar hover:text-white transition-all curse-pointer">
+          Sign Up
         </li>
       </div>
     </div>
