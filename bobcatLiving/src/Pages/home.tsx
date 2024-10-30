@@ -20,7 +20,7 @@ export const Home = () => {
       <Navbar />
       <div className="flex flex-col items-center justify-center h-[80vh]">
         <div className="flex flex-col rounded-md items-center justify-center">
-          <h1 className="text-center w-2/3 text-lg mb-6 font-bold">Search for your apartment at Texas State</h1>
+          <h1 className="text-center w-[80vw] text-3xl mb-6 font-bold">Search for your apartment at Texas State</h1>
           <input className="border-2 border-black pl-2 pr-20 py-3 rounded-lg"
             type="text"
             placeholder="search"

@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  
+
   return (
     <div>
       <header className="flex justify-center text-white py-6 px-8 md:px-32 bg-background drop-shadow-md">
@@ -47,9 +49,9 @@ const Navbar = () => {
         </div>
       </header>
 
-      <div
-        className={`absolute xl:hidden lg:hidden m:hidden top-24 left-0 w-full h-[80vh] bg-white flex flex-col items-center gap-6 font-semibold transform transition-transform' 
-      ${isMenuOpen ? "opacity-100" : "opacity-0"}`}
+      {isMenuOpen && <div
+        className={`fixed inset-0 top-24 left-0 w-full h-[80vh] bg-white flex flex-col items-center gap-6 font-semibold z-50
+      ${isMenuOpen ? "animate-slide-down" : "animate-fade-out"}`}
         style={{ transition: "transform 0.3s ease, opacity 0.3s ease" }}
       >
         <li className="list-none w-full text-center p-4 hover:bg-bar hover:text-white transition-all curse-pointer">
@@ -68,6 +70,7 @@ const Navbar = () => {
           Sign Up
         </li>
       </div>
+}
     </div>
   );
 };

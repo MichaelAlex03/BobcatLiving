@@ -14,7 +14,7 @@
 
 @layer components{
   .form{
-    @apply bg-white pl-6 pr-6 rounded-lg shadow-2xl justify-center items-center flex flex-col sm:w-[70vw] md:w-1/2 lg:w-1/2 xl:w-1/4 2xl:w-[20vw];
+    @apply bg-white pl-6 pr-6 rounded-lg shadow-2xl justify-center items-center flex flex-col sm:w-[70vw] md:w-1/2 lg:w-1/2 xl:w-1/4 2xl:w-[20vw] ;
   }
 
   .submit{
@@ -48,4 +48,5 @@
   .text-gray{
     color: #666666;
   }
+ 
 }

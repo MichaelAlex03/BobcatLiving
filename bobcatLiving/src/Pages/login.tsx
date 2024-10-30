@@ -23,12 +23,14 @@ export const Login = () => {
   Basically covering entire area*/
   return (
     <>
+      <div className="z-50">
       <Navbar />
+      </div>
       <div className="relative w-full h-full">
         <div className="bg-[url('/images/background.jpg')] absolute inset-0 blur-sm bg-no-repeat bg-cover"></div>
         <div className="absolute inset-0 bg-black opacity-30"></div>
           <div className="flex justify-center items-center h-[90vh] relative">
-            <form className="form h-[40vh]">
+            <form className="form sm:h-[100vh]">
               <div className="flex flex-col w-full">
                 <h1 className="text-3xl font-bold text-center mb-5">
                   Welcome
