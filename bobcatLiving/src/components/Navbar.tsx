@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useTransition, animated } from "@react-spring/web";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const transition = useTransition(isMenuOpen, {
 
-  
+  });
 
   return (
     <div>
@@ -28,7 +30,7 @@ const Navbar = () => {
         </ul>
 
         <div className="hidden xl:flex lg:flex ml-auto gap-8 font-semibold">
-          <Link to={"/login"}>
+          <Link to="/login">
             <button className="py-2 px-8 hover:bg-background hover:text-white hover:border-bg-background border-2 bg-bar text-white rounded-md transition-all cursor-pointer hover:bg-blue-70">
               Log In
             </button>
@@ -49,28 +51,39 @@ const Navbar = () => {
         </div>
       </header>
 
+
       {isMenuOpen && <div
-        className={`fixed inset-0 top-24 left-0 w-full h-[80vh] bg-white flex flex-col items-center gap-6 font-semibold z-50
-      ${isMenuOpen ? "animate-slide-down" : "animate-fade-out"}`}
+        className={`lg:hidden flex absolute top-24 left-0 w-full h-auto bg-white flex-col items-center gap-6 font-semibold z-50 transition-all rounded-lg border-b border-black
+      ${isMenuOpen ? "animate-slide-down" : "animate-slide-up"}`}
         style={{ transition: "transform 0.3s ease, opacity 0.3s ease" }}
       >
-        <li className="list-none w-full text-center p-4 hover:bg-bar hover:text-white transition-all curse-pointer">
-          Home
-        </li>
-        <li className="list-none w-full text-center p-4 hover:bg-bar hover:text-white transition-all curse-pointer">
-          View Apartments
-        </li>
-        <li className="list-none w-full text-center p-4 hover:bg-bar hover:text-white transition-all curse-pointer">
-          Contact
-        </li>
-        <li className="list-none w-full text-center p-4 hover:bg-bar hover:text-white transition-all curse-pointer">
-          Log In
-        </li>
-        <li className="list-none w-full text-center p-4 hover:bg-bar hover:text-white transition-all curse-pointer">
-          Sign Up
-        </li>
+        <Link to={"/"} className="list-none w-full text-center p-4 hover:bg-bar hover:text-white transition-all curse-pointer">
+          <li>
+            Home
+          </li>
+        </Link>
+        <Link to={"/"} className="list-none w-full text-center p-4 hover:bg-bar hover:text-white transition-all curse-pointer">
+          <li>
+            View Apartments
+          </li>
+        </Link>
+        <Link to={"/"} className="list-none w-full text-center p-4 hover:bg-bar hover:text-white transition-all curse-pointer">
+          <li>
+            Contacts
+          </li>
+        </Link>
+        <Link to={"/login"} className="list-none w-full text-center p-4 hover:bg-bar hover:text-white transition-all curse-pointer">
+          <li>
+            Log In
+          </li>
+        </Link>
+        <Link to={"/signUp"} className="list-none w-full text-center p-4 hover:bg-bar hover:text-white transition-all curse-pointer">
+          <li>
+            Sign Up
+          </li>
+        </Link>
       </div>
-}
+      }
     </div>
   );
 };

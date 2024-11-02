@@ -12,6 +12,8 @@ import ApartmentsPage from "./Pages/apartments.tsx";
 import Home from "./Pages/home.tsx";
 import Login from "./Pages/login.tsx";
 import SignUp from "./Pages/signUp.tsx";
+import Reviews from "./Pages/reviews.tsx";
+import CreateReview from "./Pages/createReview.tsx"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +21,8 @@ const router = createBrowserRouter(
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signUp" element={<SignUp />} />
+      <Route path="/reviews" element={<Reviews />} />
+      <Route path="/createReview" element={<CreateReview />} />
       <Route path="*" element={<Navigate to="/" />} />
       <Route path="/apartments" element={<ApartmentsPage />} />
     </>

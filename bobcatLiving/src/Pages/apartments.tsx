@@ -1,4 +1,4 @@
-import ApartmentCard from "../components/ApartmentCard";
+import ApartmentCard from "../components/apartmentCard";
 import Navbar from "../components/Navbar";
 
 export default function ApartmentsPage() {

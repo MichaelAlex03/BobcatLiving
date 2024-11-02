@@ -25,43 +25,43 @@ export const SignUp = () => {
         <div className="bg-[url('/images/background.jpg')] absolute inset-0 blur-sm w-full h-full bg-no-repeat bg-cover"></div>
         <div className="absolute inset-0 bg-black opacity-30"></div>
           <div className="flex justify-center items-center h-[90vh] relative" >
-            <form className="form h-[60vh]">
-              <div className="flex flex-col">
+            <form className="form h-[50vh]">
+              <div className="flex flex-col w-full">
                 <h1 className="text-2xl font-bold text-center mb-5">
                   Create your account
                 </h1>
 
-                <label htmlFor="userName">Username</label>
+                <label htmlFor="userName" className="mb-1 text-xs">Username</label>
                 <input
-                  className="border border-black rounded-md mb-2"
+                  className="border-b-2 border-black mb-3"
                   type="text"
-                  placeholder="username"
+                  placeholder="Username"
                   name="userName"
                   value={formData.userName}
                   onChange={handleChange}
                 />
 
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password" className="mb-1 text-xs">Password</label>
                 <input
-                  className="border border-black rounded-md mb-2"
+                  className="border-b-2 border-black mb-3"
                   type="password"
-                  placeholder="password"
+                  placeholder="Password"
                   name="password"
                   value={formData.password}
                   onChange={handleChange}
                 />
 
-                <label htmlFor="confirmPass">Confirm Password</label>
+                <label htmlFor="confirmPass" className="mb-1 text-xs">Confirm Password</label>
                 <input
-                  className="border border-black rounded-md p-2"
+                  className="border-b-2 border-black"
                   type="password"
-                  placeholder="password"
+                  placeholder="Confirm Password"
                   name="confirmPass"
                   value={formData.password}
                   onChange={handleChange}
                 />
               </div>
-              <button type="submit" className="submit">
+              <button type="submit" className="submit mt-10 mb-1">
                 Sign Up
               </button>
             </form>

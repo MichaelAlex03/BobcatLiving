@@ -4,12 +4,10 @@
 
 @layer base{
   input::-webkit-input-placeholder { 
-    text-align:left; 
+    text-align:left;
+    padding-left: 5px;
   }
 
-  input {
-    text-align: left; /* Add this line */
-  }
 }
 
 @layer components{

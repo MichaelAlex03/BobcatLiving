@@ -14,14 +14,17 @@ export default {
           '0%': { opacity: '0', transform: 'translateY(-20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
-        fadeOut: {
+        slideUp: {  // New keyframe for slide up
+
           '0%': { opacity: '1', transform: 'translateY(0)' },
-          '100%': { opacity: '0', transform: 'translateY(20px)' },
+
+          '100%': { opacity: '0', transform: 'translateY(-20px)' },
+
         },
       },
       animation: {
         'slide-down': 'slideDown 0.3s ease forwards',
-        'fade-out': 'fadeOut 0.3s ease forwards',
+        'slideUp': 'slideUp 0.3s ease forwards',
       },
     },
   },

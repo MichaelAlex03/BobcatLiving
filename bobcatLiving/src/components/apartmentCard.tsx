@@ -4,6 +4,7 @@ import {
   TiStarHalfOutline,
   TiStarOutline,
 } from "react-icons/ti";
+import { Link } from "react-router-dom"
 
 export default function ApartmentCard() {
   return (
@@ -23,9 +24,11 @@ export default function ApartmentCard() {
           <p className="text-xs">48 Reviews</p>
         </div>
         <p>$1,250 a month</p>
-        <button className="mt-4 bg-bar h-8 rounded-md text-white">
-          Review
-        </button>
+        <Link to={"/reviews"}>
+          <button className="mt-4 bg-bar h-8 rounded-md text-white w-full">
+            Review
+          </button>
+        </Link>
       </div>
     </div>
   );
