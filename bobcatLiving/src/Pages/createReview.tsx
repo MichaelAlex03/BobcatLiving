@@ -4,77 +4,79 @@ import Slider from '@mui/material/Slider'
 
 interface Review{
     title: String,
-    date: Number,
+    date: String,
     reviewContent: String
 }
 
 export const CreateReview = () => {
 
-    const [reviewData, setReviewData] = useState<Review>({title: "", date: 0, reviewContent: ""})
-    const [rating, setRating] = useState('');
+    //Getting the date
+    const today = new Date();
 
-    const marks = [{
-        value: 20,
-        label: '1'
-    },
-    {
-        value: 40,
-        label: '2'
-    },
-    {
-        value: 60,
-        label: '3'
-    },  
-    {
-        value: 80,
-        label: '4'
-    },  
-    {
-        value: 100,
-        label: '5'
-    }]
+    const year = today.getFullYear()
+    const month = today.getMonth() + 1;
+    const day = today.getDate();
 
-    const getLabel = (value: number) => {
-       const mark = marks.find(mark => mark.value === value);
-       return mark ? mark.label : '';
-    }
+    const date = month + "/" + day + "/" + year;
+
+    const [reviewData, setReviewData] = useState<Review>({title: "", date: date, reviewContent: ""})
+
+
+    const [rating, setRating] = React.useState<number>(1);
+
+    const handleSlider = (event: Event, newValue: number | number[]) => {
+        setRating(newValue as number);
+    };
+
+    console.log(rating)
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const {name, value} = e.target;
-        setReviewData(prevReviewData => ({...prevReviewData, [name]: value}))
+        setReviewData(prevReviewData => {
+            return {
+              ...prevReviewData,
+              [name]: value,
+            };
+          })
     }
 
     console.log(reviewData)
 
 
+
     return (
-        <div className=''>
+        <>
             <Navbar />
-            <div className='flex flex-col items-center'>
-                <div className='flex flex-col justify-center items-center m-5'>
+            <div className='flex flex-col items-center h-[90vh]'>
+                <div className='flex flex-col items-center m-5'>
                     <h1 className='text-3xl font-bold'>Create Review</h1>
                     <p className='text-l font-bold'>for Bobcat Village</p>
                 </div>
-                <div className='flex flex-col h-[80vh] w-[80vw]'>
+                <div className='flex flex-col h-[80vh] w-[80vw] gap-2'>
                     <div>
                         <label htmlFor='title'>Rating</label>
                         <div className='flex gap-4'>
                             <Slider 
                                 aria-label='Restricted values'
                                 valueLabelDisplay='auto'
-                                getAriaValueText={getLabel}
-                                step={null}
-                                marks={marks}/>
-                            <input className='border-2 border-gray-300 rounded-md w-[15vw] h-[5vh]'
-                                onChange={handleChange}
+                                defaultValue={1}
+                                min={1}
+                                max={5}
+                                step={1}
+                                value={rating}
+                                onChange={handleSlider}
+                            />
+                            <input className='border-2 border-gray-300 w-[15vw] h-[5vh]'
                                 type='text'
                                 name='rating'
+                                value={rating}
+                                readOnly
                             />
                         </div>
                     </div>
                     <div className='flex flex-col'>
                         <label htmlFor='title'>Title</label>
-                        <input className='border-2 border-gray-300 rounded-md'
+                        <input className='border-2 border-gray-300'
                             onChange={handleChange}
                             type='text'
                             name='title'
@@ -82,18 +84,20 @@ export const CreateReview = () => {
                         />
                     </div>
                     <div className='flex flex-col'>
-                        <label htmlFor='title'>Review</label>
-                        <input className='border-2 border-gray-300 rounded-md h-[20vh]'
-                            onChange={handleChange}
-                            type='text'
-                            name='reviewContent'
-                        />
+                        <label htmlFor='title'>Date</label>
+                        {reviewData.date}
                     </div>
-                    <button type='submit' className='submit mt-5'>Submit</button>
+                    <div className='flex flex-col'>
+                        <label htmlFor='title'>Review</label>
+                        <textarea className='border-2 border-gray-300 h-[20vh]'
+                            onChange={() => handleChange}
+                            value={reviewData.reviewContent as string} //Ensures that what is inputed is a string
+                            name='reviewContent'></textarea>
+                    </div>
+                    <button type='submit' className='submit mt-5'>Create Review</button>
                 </div>
             </div>
-            
-        </div>
+        </>
     )
 }
 

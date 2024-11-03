@@ -7,7 +7,7 @@ export const Reviews = () => {
 
     <div>
       <Navbar/>
-      <div className='form bg-bar '></div>
+      <button><a href="/createReview">Leave Review</a></button>
     </div>
   )
 }
