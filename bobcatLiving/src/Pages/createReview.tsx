@@ -3,9 +3,9 @@ import Navbar from '../components/Navbar'
 import Slider from '@mui/material/Slider'
 
 interface Review{
-    title: String,
-    date: String,
-    reviewContent: String
+    title: string,
+    date: string,
+    reviewContent: string
 }
 
 export const CreateReview = () => {
@@ -30,7 +30,7 @@ export const CreateReview = () => {
 
     console.log(rating)
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement> |  React.ChangeEvent<HTMLTextAreaElement>) => {
         const {name, value} = e.target;
         setReviewData(prevReviewData => {
             return {
@@ -48,11 +48,11 @@ export const CreateReview = () => {
         <>
             <Navbar />
             <div className='flex flex-col items-center h-[90vh]'>
-                <div className='flex flex-col items-center m-5'>
+                <div className='flex flex-col mt-5'>
                     <h1 className='text-3xl font-bold'>Create Review</h1>
-                    <p className='text-l font-bold'>for Bobcat Village</p>
+                    <p className='text-l font-bold text-center'>for Bobcat Village</p>
                 </div>
-                <div className='flex flex-col h-[80vh] w-[80vw] gap-2'>
+                <div className='flex flex-col h-[80vh] w-[80vw] gap-2 sm:w-[60vw] md:w-[50vw] lg:w-[50vw] xl:w-[40vw] 2xl:w-[40vw]'>
                     <div>
                         <label htmlFor='title'>Rating</label>
                         <div className='flex gap-4'>
@@ -66,7 +66,7 @@ export const CreateReview = () => {
                                 value={rating}
                                 onChange={handleSlider}
                             />
-                            <input className='border-2 border-gray-300 w-[15vw] h-[5vh]'
+                            <input className='border-2 border-gray-300 w-[15vw] 2xl:w-[10vw] h-[5vh]'
                                 type='text'
                                 name='rating'
                                 value={rating}
@@ -81,6 +81,7 @@ export const CreateReview = () => {
                             type='text'
                             name='title'
                             placeholder='Title'
+                            id='title'
                         />
                     </div>
                     <div className='flex flex-col'>
@@ -88,13 +89,14 @@ export const CreateReview = () => {
                         {reviewData.date}
                     </div>
                     <div className='flex flex-col'>
-                        <label htmlFor='title'>Review</label>
+                        <label htmlFor='reviewContent'>Review</label>
                         <textarea className='border-2 border-gray-300 h-[20vh]'
-                            onChange={() => handleChange}
-                            value={reviewData.reviewContent as string} //Ensures that what is inputed is a string
-                            name='reviewContent'></textarea>
+                            onChange={handleChange}
+                            value={reviewData.reviewContent} //Ensures that what is inputed is a string
+                            name='reviewContent'
+                            id='reviewContent'></textarea>
                     </div>
-                    <button type='submit' className='submit mt-5'>Create Review</button>
+                    <button type='submit' className='submit mt-5'><a href="/reviews">Create Review</a></button>
                 </div>
             </div>
         </>
