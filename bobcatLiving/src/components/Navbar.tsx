@@ -62,7 +62,7 @@ const Navbar = () => {
             Home
           </li>
         </Link>
-        <Link to={"/"} className="list-none w-full text-center p-4 hover:bg-bar hover:text-white transition-all curse-pointer">
+        <Link to={"/apartments"} className="list-none w-full text-center p-4 hover:bg-bar hover:text-white transition-all curse-pointer">
           <li>
             View Apartments
           </li>

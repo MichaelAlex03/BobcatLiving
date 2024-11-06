@@ -7,8 +7,8 @@ export const Reviews = () => {
     <>
       <Navbar />
       <div className='p-5'>
-        <button className='submit'><a href="/createReview">Leave Review</a></button>
-        <div className='flex flex-col m-5 gap-4'>
+        <button className='submit mb-5'><a href="/createReview">Leave Review</a></button>
+        <div className='flex flex-col gap-4'>
           <ReviewCard 
             username='Michael'
             title="Review 1"
